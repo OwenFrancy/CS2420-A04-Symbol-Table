@@ -156,5 +156,7 @@ class UniqueTreeDemo {
         	}
         	System.out.printf("greatestDifference()  expected: %d  actual: %d\n", expected, actual);
         }
+
+        System.out.printf("\n%d Passed %d Failed\n", passes, fails);
     }
 }
