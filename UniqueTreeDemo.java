@@ -3,10 +3,10 @@ package a04_Tree;
 import java.util.List;
 
 /**
- * The {@code UniqueTreeDemo} class serves as a driver program to test and validate 
- * the functionality of the {@link UniqueTree} class. It provides a sample tree structure 
- * using a list of integer arrays, where each array represents a node and its left and 
- * right child indices. This class ensures that the implemented methods in 
+ * The {@code UniqueTreeDemo} class serves as a driver program to test and validate
+ * the functionality of the {@link UniqueTree} class. It provides a sample tree structure
+ * using a list of integer arrays, where each array represents a node and its left and
+ * right child indices. This class ensures that the implemented methods in
  * {@link UniqueTree} work for arbitrary tree structures.
  *
  * <p>The provided tree structure uses the following format for each node:
@@ -15,19 +15,19 @@ import java.util.List;
  *   <li>Element at index 1: The index of the left child in the list (or {@code null} if no left child)</li>
  *   <li>Element at index 2: The index of the right child in the list (or {@code null} if no right child)</li>
  * </ul>
- * 
- * @author CS Starter Code + [YourNames]
+ *
+ * @author CS Starter Code + Ash Bullock
  */
 class UniqueTreeDemo {
-	
+
 
     public static void main(String[] args) {
         // This is starter code to help you test your method implementations.
    	    // Ensure your code works for any tree structure, not just the provided example.
-    	
+
         List<Integer[]> treeData = List.of(
             new Integer[]{52, 1, 2}, // root: 52; left child: 23 (index 1) right child: 87 (index 2)
-            new Integer[]{23, 3, 4}, 
+            new Integer[]{23, 3, 4},
             new Integer[]{87, 5, 6},
             new Integer[]{34, 7, 8},
             new Integer[]{45, 9, 10},
@@ -47,16 +47,114 @@ class UniqueTreeDemo {
 
         UniqueTree tree = new UniqueTree(treeData);
 
-        tree.doubleEvenNumbers();
-        // Ensure the jGraps Visualizer is open so you can track the changes.
-        System.out.println("Count of leaf parents: " + tree.countLeafParents());
-        System.out.println("Average of all odd numbers: " + tree.averageOfOddNumbers());
-        System.out.println("Sum of all right children (excluding root): " + tree.sumOfRightChildren());
-        System.out.println("Greatest difference between two numbers in the tree: " + tree.greatestDifference());
+        int passes = 0;
+        int fails = 0;
 
-        // TODO: Add your own test cases to thoroughly test each method.
-        // Include a variety of trees (e.g., edge cases, different shapes, only left- or right-leaning trees, 
-        // negative values, only odd/even values, single-node trees). 
-        // For each test, determine the expected result and verify that the output matches your expectations.
+        {
+        	int expected = 6;
+        	int actual = tree.countLeafParents();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("countLeafParents()    expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	double expected = 49.0;
+        	double actual = tree.averageOfOddNumbers();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("averageOfOddNumbers() expected: %f  actual: %f\n", expected, actual);
+        }
+
+        {
+        	int expected = 376;
+        	int actual = tree.sumOfRightChildren();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("sumOfRightChildren()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	int expected = 75;
+        	int actual = tree.greatestDifference();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("greatestDifference()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        System.out.println("\ndoubleEvenNumbers()\n");
+        tree.doubleEvenNumbers();
+
+        {
+        	int expected = 6;
+        	int actual = tree.countLeafParents();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("countLeafParents()    expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	double expected = 49.0;
+        	double actual = tree.averageOfOddNumbers();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("averageOfOddNumbers() expected: %f  actual: %f\n", expected, actual);
+        }
+
+        {
+        	int expected = 454;
+        	int actual = tree.sumOfRightChildren();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("sumOfRightChildren()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	int expected = 143;
+        	int actual = tree.greatestDifference();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("greatestDifference()  expected: %d  actual: %d\n", expected, actual);
+        }
     }
 }

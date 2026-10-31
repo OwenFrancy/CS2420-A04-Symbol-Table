@@ -8,7 +8,7 @@ import java.util.List;
  * Represents a binary tree with unique integer values. Provides various methods to
  * manipulate and analyze the tree structure, including doubling even numbers, counting
  * specific types of nodes, and calculating differences between values.
- * 
+ *
  * The tree data is represented as a list of integer arrays, where each array contains
  * the value of a node and the indices of its left and right children. For example:
  *
@@ -16,8 +16,8 @@ import java.util.List;
  *
  * The root node is at index 0. A left or right child index of null indicates that
  * the node does not have a corresponding child.
- * 
- * @author CS Starter Code + [YourNames]
+ *
+ * @author CS Starter Code + Owen Francy
  */
 public class UniqueTree {
 
@@ -89,17 +89,17 @@ public class UniqueTree {
     	doubleEvenNumbers(node.left);
     	doubleEvenNumbers(node.right);
     }
-    
+
     /**
      * Calculates the sum of all right children.
      * Reminder: The root is not a right child because it has no parent.
-     * 
+     *
      * @return the sum of all right children
      */
     public int sumOfRightChildren() {
     	return sumOfRightChildren(root);
     }
-    
+
     public int sumOfRightChildren(Node node) {
     	if (node == null) {
     		return 0;
@@ -113,13 +113,13 @@ public class UniqueTree {
 
     /**
      * Counts how many nodes have at least one child that is a leave.
-     * 
+     *
      * @return the count of nodes with all children as leaves
      */
     public int countLeafParents() {
     	return countLeafParents(root);
     }
-    
+
     public int countLeafParents(Node node) {
     	if(node == null) {
     		return 0;
@@ -136,7 +136,7 @@ public class UniqueTree {
     }
     /**
      * Calculates the average of all odd numbers in the tree.
-     * 
+     *
      * @return the average of all odd numbers, or 0 if there are no odd numbers
      */
     public double averageOfOddNumbers() {
@@ -171,7 +171,7 @@ public class UniqueTree {
 
     /**
      * Finds the difference between the largest and smallest elements in the tree.
-     * 
+     *
      * @return the difference between the largest and smallest values
      */
     public int greatestDifference() {
