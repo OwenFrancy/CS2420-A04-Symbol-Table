@@ -16,7 +16,7 @@ import java.util.List;
  *   <li>Element at index 2: The index of the right child in the list (or {@code null} if no right child)</li>
  * </ul>
  *
- * @author CS Starter Code + Ash Bullock
+ * @author CS Starter Code + Ash Bullock + Owen Francy
  */
 class UniqueTreeDemo {
 
@@ -46,6 +46,26 @@ class UniqueTreeDemo {
         );
 
         UniqueTree tree = new UniqueTree(treeData);
+
+        List<Integer[]> leftTreeData = List.of(
+        	new Integer[] {1,1,null},
+        	new Integer[] {2,2,null},
+        	new Integer[] {3,3,null},
+        	new Integer[] {4,4,null},
+        	new Integer[] {5,null,null}
+        );
+
+        UniqueTree leftTree = new UniqueTree(leftTreeData);
+
+        List<Integer[]> rightTreeData = List.of(
+        	new Integer[] {1,null,1},
+        	new Integer[] {2,null,2},
+        	new Integer[] {3,null,3},
+        	new Integer[] {4,null,4},
+        	new Integer[] {5,null,null}
+        );
+
+        UniqueTree rightTree = new UniqueTree(rightTreeData);
 
         int passes = 0;
         int fails = 0;
@@ -147,6 +167,224 @@ class UniqueTreeDemo {
         {
         	int expected = 143;
         	int actual = tree.greatestDifference();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("greatestDifference()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        System.out.println("\nleftTree\n");
+
+        {
+        	int expected = 1;
+        	int actual = leftTree.countLeafParents();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("countLeafParents()    expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	double expected = 3.0;
+        	double actual = leftTree.averageOfOddNumbers();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("averageOfOddNumbers() expected: %f  actual: %f\n", expected, actual);
+        }
+
+        {
+        	int expected = 0;
+        	int actual = leftTree.sumOfRightChildren();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("sumOfRightChildren()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	int expected = 4;
+        	int actual = leftTree.greatestDifference();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("greatestDifference()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        System.out.println("\ndoubleEvenNumbers()\n");
+        leftTree.doubleEvenNumbers();
+
+        {
+        	int expected = 1;
+        	int actual = leftTree.countLeafParents();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("countLeafParents()    expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	double expected = 3.0;
+        	double actual = leftTree.averageOfOddNumbers();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("averageOfOddNumbers() expected: %f  actual: %f\n", expected, actual);
+        }
+
+        {
+        	int expected = 0;
+        	int actual = leftTree.sumOfRightChildren();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("sumOfRightChildren()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	int expected = 7;
+        	int actual = leftTree.greatestDifference();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("greatestDifference()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        System.out.println("\nrightTree\n");
+
+        {
+        	int expected = 1;
+        	int actual = rightTree.countLeafParents();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("countLeafParents()    expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	double expected = 3.0;
+        	double actual = rightTree.averageOfOddNumbers();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("averageOfOddNumbers() expected: %f  actual: %f\n", expected, actual);
+        }
+
+        {
+        	int expected = 14;
+        	int actual = rightTree.sumOfRightChildren();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("sumOfRightChildren()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	int expected = 4;
+        	int actual = rightTree.greatestDifference();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("greatestDifference()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        System.out.println("\ndoubleEvenNumbers()\n");
+        rightTree.doubleEvenNumbers();
+
+        {
+        	int expected = 1;
+        	int actual = rightTree.countLeafParents();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("countLeafParents()    expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	double expected = 3.0;
+        	double actual = rightTree.averageOfOddNumbers();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("averageOfOddNumbers() expected: %f  actual: %f\n", expected, actual);
+        }
+
+        {
+        	int expected = 20;
+        	int actual = rightTree.sumOfRightChildren();
+        	if (expected == actual) {
+        		System.out.print(" P ");
+        		++passes;
+        	} else {
+        		System.out.print(" F ");
+        		++fails;
+        	}
+        	System.out.printf("sumOfRightChildren()  expected: %d  actual: %d\n", expected, actual);
+        }
+
+        {
+        	int expected = 7;
+        	int actual = rightTree.greatestDifference();
         	if (expected == actual) {
         		System.out.print(" P ");
         		++passes;
